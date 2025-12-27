@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  color: aliceblue;
+  font-family: "Grey Qo", cursive;
+  overflow: hidden;
+}
+
+.main_div {
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.images_container {
+  padding-right: 80px;
+}
+
+.smoke {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  overflow: hidden;
+  z-index: 1; 
+}
+
+.smoke video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  margin-bottom: -17px;
+  z-index: 1;
+  padding: 20px;
+}
+
+.chakra {
+  width: 300px;
+  height: auto;
+  animation: spin 10s linear infinite;
+  margin-bottom: 20px;
+}
+
+.chakra-wrapper {
+  position: absolute;
+  left: 227px;
+  top: 130px;
+  z-index: 1;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.wishes_content {
+  font-size: 5rem;
+  background: -webkit-linear-gradient(rgb(253, 166, 4), white, rgb(4, 114, 4));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.circle-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.center-photo {
+  position: absolute;
+  height: 446px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+.outer-photos {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 81px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  animation: rotate 20s linear infinite;
+}
+
+.outer-photo {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  transform-origin: center;
+}
+
+.outer-photo:nth-child(1) { transform: rotateY(0deg) translateZ(200px) rotateY(0deg); }
+.outer-photo:nth-child(2) { transform: rotateY(60deg) translateZ(200px) rotateY(-60deg); }
+.outer-photo:nth-child(3) { transform: rotateY(120deg) translateZ(200px) rotateY(-120deg); }
+.outer-photo:nth-child(4) { transform: rotateY(180deg) translateZ(200px) rotateY(-180deg); }
+.outer-photo:nth-child(5) { transform: rotateY(240deg) translateZ(200px) rotateY(-240deg); }
+.outer-photo:nth-child(6) { transform: rotateY(300deg) translateZ(200px) rotateY(-300deg); }
+.outer-photo:nth-child(7) { transform: rotateY(360deg) translateZ(200px) rotateY(-360deg); }
+
+@keyframes rotate {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+/* Corner Photo Styling - Bottom Right */
+.corner-photo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999; /* stays above smoke */
+}
+
+.corner-photo img {
+  width: 220px; /* increased size */
+  height: auto;
+  border-radius: 15px;
+  border: 2px solid white;
+}
+
+/* Responsive */
+@media (max-width: 1120px) {
+  .main_div {
+    display: flex;
+    flex-direction: column;
+  }
+  .chakra { width: 200px; }
+  .wishes_content { font-size: 3rem; }
+  .content p { font-size: 1.2rem; }
+  .chakra-wrapper {
+    position: absolute;
+    left: 33%;
+    top: 53px;
+    z-index: 1;
+  }
+  .center-photo {
+    height: 300px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+  }
+  .circle-container {
+    width: 364px;
+    height: 376px;
+    border-radius: 50%;
+  }
+  .images_container { padding-right: 0px; }
+}
+
+@media (max-width: 400px) {
+  .chakra-wrapper {
+    position: absolute;
+    left: 24%;
+    top: 130px;
+    z-index: 1;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black; /* Keep your background image/animation here if needed */
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+/* Main content placeholder */
+.main-content {
+  text-align: center;
+  padding-top: 50px;
+}
+
+/* Corner Photo Styling - Bottom Right */
+.corner-photo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.corner-photo img {
+  width: 260px;
+  height: auto;
+  border-radius: 15px;
+  border: 2px solid white;
+}
+
+/* Corner Text Styling - Bottom Left */
+.corner-text {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: white;
+  text-shadow: 0 0 10px orange, 0 0 20px white, 0 0 30px green;
+  animation: glowPulse 2s infinite alternate;
+}
+
+.corner-text span {
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(to right, orange, white, green);
+  -webkit-background-clip: text;
+}
+
+.corner-text strong {
+  color: yellow;
+  text-shadow: 0 0 10px gold, 0 0 20px orange, 0 0 30px red;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px orange, 0 0 10px white, 0 0 15px green;
+  }
+  to {
+    text-shadow: 0 0 20px orange, 0 0 30px white, 0 0 40px green;
+  }
+}
